@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="Mock-Target-API">
+    <Basepaths>/mock-target-api</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1562871373558</CreatedAt>
+    <CreatedBy>avetter@pivotal.io</CreatedBy>
+    <Description>OpenAPI Specification for the Apigee mock target service endpoint.</Description>
+    <DisplayName>Mock-Target-API</DisplayName>
+    <LastModifiedAt>1562871510664</LastModifiedAt>
+    <LastModifiedBy>avetter@pivotal.io</LastModifiedBy>
+    <ManifestVersion>SHA-512:12f34dbf4dbafeced412f940d03e8003196fea1edc14172aefd6c6b2c427449b40bd280afbac9e1a010b0293ec5533637ff21126a1175364dcb77df1b43f7c77</ManifestVersion>
+    <Policies>
+        <Policy>Access-Control-1</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>openapi://association.json</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

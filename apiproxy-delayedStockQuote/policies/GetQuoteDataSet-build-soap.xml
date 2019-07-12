@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="true" enabled="true" name="GetQuoteDataSet-build-soap">
+    <DisplayName>GetQuoteDataSet Build SOAP</DisplayName>
+    <Add>
+        <Headers>
+            <Header name="SOAPAction">http://ws.cdyne.com/GetQuoteDataSet</Header>
+        </Headers>
+    </Add>
+    <Set>
+        <Headers>
+            <Header name="Content-Type">text/xml; charset=utf-8</Header>
+        </Headers>
+        <Payload contentType="text/xml">
+<s11:Envelope xmlns:s11="http://schemas.xmlsoap.org/soap/envelope/">  <s11:Body>    <ns1:GetQuoteDataSet xmlns:ns1="http://ws.cdyne.com/">
+<!-- optional -->      <ns1:StockSymbols>{StockSymbols}</ns1:StockSymbols>
+<!-- optional -->      <ns1:LicenseKey>{LicenseKey}</ns1:LicenseKey>    </ns1:GetQuoteDataSet>  </s11:Body>
+</s11:Envelope>
+</Payload>
+        <Verb>POST</Verb>
+    </Set>
+    <AssignVariable>
+        <Name>forward.target.url</Name>
+        <Value>https://ws.cdyne.com/delayedstockquote/delayedstockquote.asmx</Value>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

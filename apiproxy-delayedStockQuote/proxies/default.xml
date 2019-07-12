@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>DelayedStockQuote</Description>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>extract-format</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+<Flow name="GetOAS">
+<Description>Get OpenAPI Specification</Description>
+<Request>
+<Step>
+<Name>return-open-api</Name>
+</Step>
+</Request>
+<Response/>
+<Condition>(proxy.pathsuffix MatchesPath "/openapi.json") and (request.verb = "GET")</Condition>
+</Flow>
+<Flow name="GetQuote">
+<Description>GetQuote</Description>
+<Request>
+<Step>
+<Name>GetQuote-extract-query-param</Name>
+</Step>
+<Step>
+<Name>GetQuote-build-soap</Name>
+</Step>
+<Step>
+<Name>remove-empty-nodes</Name>
+<Condition>(verb == "GET")</Condition>
+</Step>
+</Request>
+<Response/>
+<Condition>(proxy.pathsuffix MatchesPath "/quote") and (request.verb = "GET")</Condition>
+</Flow>
+<Flow name="GetQuoteDataSet">
+<Description>GetQuoteDataSet</Description>
+<Request>
+<Step>
+<Name>GetQuoteDataSet-extract-query-param</Name>
+</Step>
+<Step>
+<Name>GetQuoteDataSet-build-soap</Name>
+</Step>
+<Step>
+<Name>remove-empty-nodes</Name>
+<Condition>(verb == "GET")</Condition>
+</Step>
+</Request>
+<Response/>
+<Condition>(proxy.pathsuffix MatchesPath "/quotedataset") and (request.verb = "GET")</Condition>
+</Flow>
+<Flow name="GetQuickQuote">
+<Description>GetQuickQuote</Description>
+<Request>
+<Step>
+<Name>GetQuickQuote-extract-query-param</Name>
+</Step>
+<Step>
+<Name>GetQuickQuote-build-soap</Name>
+</Step>
+<Step>
+<Name>remove-empty-nodes</Name>
+<Condition>(verb == "GET")</Condition>
+</Step>
+</Request>
+<Response/>
+<Condition>(proxy.pathsuffix MatchesPath "/quickquote") and (request.verb = "GET")</Condition>
+</Flow>
+<Flow name="unknown-resource">
+<Description>Unknown Resource</Description>
+<Request>
+<Step>
+<Name>unknown-resource</Name>
+<Condition>(verb != "GET" AND contentformat == "application/json") OR (verb == "GET" AND acceptformat !~ "*/xml")</Condition>
+</Step>
+<Step>
+<Name>unknown-resource-xml</Name>
+<Condition>(verb != "GET" AND contentformat != "application/json") OR (verb == "GET" AND acceptformat ~ "*/xml")</Condition>
+</Step>
+</Request>
+<Response/>
+<Condition/>
+</Flow>
+</Flows>
+    <HTTPProxyConnection>
+        <BasePath>/delayedstockquote</BasePath>
+        <Properties/>
+    <VirtualHost>default</VirtualHost>
+<VirtualHost>secure</VirtualHost>
+</HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

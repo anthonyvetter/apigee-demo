@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="3" name="rateLimitingDemo">
+    <Basepaths>/v1/ratelimitingdemo</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1562795905248</CreatedAt>
+    <CreatedBy>avetter@pivotal.io</CreatedBy>
+    <Description></Description>
+    <DisplayName>rateLimitingDemo</DisplayName>
+    <LastModifiedAt>1562799244221</LastModifiedAt>
+    <LastModifiedBy>avetter@pivotal.io</LastModifiedBy>
+    <ManifestVersion>SHA-512:c3a8023a288053826c78640a2a502ed990f8a9b595949fef00ecf7e3fc19109e4c716d1fc1595424254509980bed746e24891de418bcd5948aefae88479355ef</ManifestVersion>
+    <Policies>
+        <Policy>Quota-1</Policy>
+        <Policy>Spike-Arrest-1</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

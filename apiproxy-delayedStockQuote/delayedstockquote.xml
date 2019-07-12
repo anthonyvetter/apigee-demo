@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="delayedstockquote">
+    <Basepaths>/delayedstockquote</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1562803468147</CreatedAt>
+    <CreatedBy>avetter@pivotal.io</CreatedBy>
+    <Description>DelayedStockQuote</Description>
+    <DisplayName>DelayedStockQuote</DisplayName>
+    <LastModifiedAt>1562803468147</LastModifiedAt>
+    <LastModifiedBy>avetter@pivotal.io</LastModifiedBy>
+    <ManifestVersion>SHA-512:6e876f3bf16c27e0693e27e410971552d78d45a2753f4ebc2b789b38ab800a898f0d0eda86d045a7a4bfbca6298e23da99091e2b6c87dedc518cd64eb062412e</ManifestVersion>
+    <Policies>
+        <Policy>GetQuickQuote-build-soap</Policy>
+        <Policy>GetQuickQuote-extract-query-param</Policy>
+        <Policy>GetQuote-build-soap</Policy>
+        <Policy>GetQuote-extract-query-param</Policy>
+        <Policy>GetQuoteDataSet-build-soap</Policy>
+        <Policy>GetQuoteDataSet-extract-query-param</Policy>
+        <Policy>extract-format</Policy>
+        <Policy>get-response-soap-body-xml</Policy>
+        <Policy>get-response-soap-body</Policy>
+        <Policy>remove-empty-nodes</Policy>
+        <Policy>remove-namespaces</Policy>
+        <Policy>return-generic-error-accept</Policy>
+        <Policy>return-generic-error</Policy>
+        <Policy>return-open-api</Policy>
+        <Policy>set-response-soap-body-accept</Policy>
+        <Policy>set-response-soap-body</Policy>
+        <Policy>set-target-url</Policy>
+        <Policy>unknown-resource-xml</Policy>
+        <Policy>unknown-resource</Policy>
+        <Policy>xml-to-json</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>xsl://remove-empty-nodes.xslt</Resource>
+        <Resource>xsl://remove-namespaces.xslt</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="return-open-api">
+    <DisplayName>Return Open API</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+            <StatusCode>200</StatusCode>
+            <Headers>
+                <Header name="Content-Type">application/json</Header>
+            </Headers>
+            <Payload contentType="application/json" variablePrefix="@" variableSuffix="#">{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "DelayedStockQuote",
+    "description": "An OAS document generated from WSDL",
+    "termsOfService": "",
+    "contact": {
+      "name": "API Team"
+    },
+    "license": {
+      "name": "Apache 2.0"
+    }
+  },
+  "host": "@request.header.host#",
+  "basePath": "/delayedstockquote",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/quote": {
+      "get": {
+        "description": "Implements WSDL operation GetQuote",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/GetQuoteResponse"
+            },
+            "description": "Successful response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "GetQuote",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GetQuote"
+            }
+          }
+        ]
+      }
+    },
+    "/quickquote": {
+      "get": {
+        "description": "Implements WSDL operation GetQuickQuote",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/GetQuickQuoteResponse"
+            },
+            "description": "Successful response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "GetQuickQuote",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GetQuickQuote"
+            }
+          }
+        ]
+      }
+    },
+    "/quotedataset": {
+      "get": {
+        "description": "Implements WSDL operation GetQuoteDataSet",
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/GetQuoteDataSetResponse"
+            },
+            "description": "Successful response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "GetQuoteDataSet",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GetQuoteDataSet"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "GetQuote": {
+      "properties": {
+        "StockSymbol": {
+          "type": "string"
+        },
+        "LicenseKey": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GetQuoteResponse": {
+      "properties": {
+        "GetQuoteResult": {
+          "$ref": "#/definitions/GetQuoteResult"
+        }
+      },
+      "type": "object"
+    },
+    "GetQuoteResult": {
+      "properties": {
+        "StockSymbol": {
+          "type": "string"
+        },
+        "LastTradeAmount": {
+          "type": "string"
+        },
+        "LastTradeDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "StockChange": {
+          "type": "string"
+        },
+        "OpenAmount": {
+          "type": "string"
+        },
+        "DayHigh": {
+          "type": "string"
+        },
+        "DayLow": {
+          "type": "string"
+        },
+        "StockVolume": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "PrevCls": {
+          "type": "string"
+        },
+        "ChangePercent": {
+          "type": "string"
+        },
+        "FiftyTwoWeekRange": {
+          "type": "string"
+        },
+        "EarnPerShare": {
+          "type": "string"
+        },
+        "PE": {
+          "type": "string"
+        },
+        "CompanyName": {
+          "type": "string"
+        },
+        "QuoteError": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "GetQuickQuote": {
+      "properties": {
+        "StockSymbol": {
+          "type": "string"
+        },
+        "LicenseKey": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GetQuickQuoteResponse": {
+      "properties": {
+        "GetQuickQuoteResult": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GetQuoteDataSet": {
+      "properties": {
+        "StockSymbols": {
+          "type": "string"
+        },
+        "LicenseKey": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GetQuoteDataSetResponse": {
+      "properties": {
+        "GetQuoteDataSetResult": {
+          "$ref": "#/definitions/GetQuoteDataSetResult"
+        }
+      },
+      "type": "object"
+    },
+    "GetQuoteDataSetResult": {
+      "properties": {},
+      "type": "object"
+    }
+  }
+}</Payload>
+        </Set>
+    </FaultResponse>
+</RaiseFault>
